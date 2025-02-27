@@ -1,0 +1,236 @@
+:root {
+    --gold: #FFD700;
+    --gold-light: #F8E9A1;
+    --gold-dark: #D4AF37;
+    --black: #000000;
+    --dark-gray: #1A1A1A;
+    --light-gray: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--black);
+    color: var(--gold);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gold-dark);
+}
+
+.logo-container {
+    margin-bottom: 2rem;
+}
+
+#logo {
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.menu-section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: var(--gold-dark);
+    margin: 0.5rem auto;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--gold-dark);
+    border-radius: 5px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.menu-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.menu-item .description {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+.empty-category {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-light);
+    font-style: italic;
+    background-color: var(--dark-gray);
+    border-radius: 5px;
+    border: 1px dashed var(--gold-dark);
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gold-dark);
+    color: var(--gold-light);
+    font-size: 0.9rem;
+}
+
+/* Estilos para a navegação rápida */
+.quick-nav {
+    background-color: #222;
+    border-radius: 8px;
+    margin: 10px 0 20px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.quick-nav-title {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.quick-nav-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.quick-nav-item {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.quick-nav-item:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+/* Ajustes para o layout */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header .logo {
+    max-width: 350px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    color: #FFD700;
+    margin: 0;
+}
+
+/* Estilos para o botão de voltar ao topo */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #D4AF37;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backToTopBtn:hover {
+  background-color: #B8860B;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+}

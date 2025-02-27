@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Gourmet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo/logo.png" alt="Logo The House" class="logo" onerror="this.src='https://via.placeholder.com/200x100/000000/FFD700?text=THE+HOUSE'; this.onerror=null;">
+        </div>
+        
+        <!-- Navegação Rápida -->
+        <div class="quick-nav">
+            <div class="quick-nav-items" id="quick-nav-items">
+                <!-- Itens de navegação serão adicionados dinamicamente pelo JavaScript -->
+            </div>
+        </div>
+        
+        <header>
+            <div class="logo-container">
+            </div>
+        </header>
+
+        <main>
+            <!-- As seções do cardápio serão geradas dinamicamente pelo JavaScript -->
+        </main>
+
+        <footer>
+            <p>&copy; 2025 The House - Todos os direitos reservados</p>
+        </footer>
+        <button id="backToTopBtn" title="Voltar ao topo">↑</button>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,560 @@
+/* Estilos específicos para a página de administração */
+
+/* Estilos para títulos */
+h2 {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--gold);
+}
+
+.admin-section {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--gold-dark);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid var(--gold-dark);
+}
+
+.admin-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    color: var(--gold-light);
+    font-weight: 500;
+}
+
+input, select, textarea {
+    background-color: var(--light-gray);
+    border: 1px solid var(--gold-dark);
+    border-radius: 4px;
+    padding: 0.8rem;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.admin-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Estilos para os botões de adicionar */
+.btn-add {
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-add:hover {
+    background-color: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-add:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para os botões de excluir */
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+.btn-delete:active {
+    transform: scale(1);
+}
+
+/* Estilos para os botões de mover categorias */
+.btn-move {
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0 4px;
+}
+
+.btn-move:hover:not(:disabled) {
+    background-color: var(--gold-dark);
+    transform: scale(1.1);
+}
+
+.btn-move:active:not(:disabled) {
+    transform: scale(1);
+}
+
+.btn-move:disabled {
+    background-color: #555;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.5;
+}
+
+/* Estilos para o botão de editar */
+.btn-edit {
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-right: 8px;
+}
+
+.btn-edit:hover {
+    background-color: var(--gold-dark);
+    transform: scale(1.1);
+}
+
+.btn-edit:active {
+    transform: scale(1);
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    background-color: var(--light-gray);
+    color: var(--gold-light);
+    border: 1px solid var(--gold-dark);
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--gold);
+    color: var(--black);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category-items {
+    display: none;
+}
+
+.category-items.active {
+    display: block;
+}
+
+/* Estilo para os itens do menu */
+.menu-item {
+    background-color: var(--light-gray);
+    border: 1px solid var(--gold-dark);
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-color: var(--gold);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.item-header h3 {
+    color: var(--gold);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.description {
+    color: #e0e0e0;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.price {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.empty-category {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-light);
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: 1px dashed var(--gold-dark);
+}
+
+.admin-item {
+    background-color: var(--light-gray);
+    border: 1px solid var(--gold-dark);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-item-info {
+    flex: 1;
+}
+
+.admin-item-info h3 {
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+}
+
+.admin-item-info p {
+    margin: 0.2rem 0;
+    color: white;
+}
+
+.admin-item-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.item-list-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+/* Estilos para gerenciamento de categorias */
+.category-management {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .category-management {
+        grid-template-columns: 1fr;
+    }
+}
+
+.existing-categories {
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    padding: 1.5rem;
+}
+
+.existing-categories h3 {
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--gold-dark);
+    padding-bottom: 0.5rem;
+}
+
+.categories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-gray);
+    border: 1px solid var(--gold-dark);
+    border-radius: 4px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Animação para quando a categoria é movida */
+@keyframes categoryMoved {
+    0% {
+        background-color: var(--dark-gray);
+    }
+    50% {
+        background-color: rgba(255, 215, 0, 0.2);
+        border-color: var(--gold);
+    }
+    100% {
+        background-color: var(--dark-gray);
+    }
+}
+
+.category-moved {
+    animation: categoryMoved 0.5s ease;
+}
+
+.category-item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.category-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.category-info span {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.category-info small {
+    color: var(--gold-light);
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+.category-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--gold-dark);
+}
+
+.modal-header h2 {
+    color: var(--gold);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--gold-dark);
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Ajustes para os itens do menu */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para as listas de itens */
+.items-list {
+    display: none;
+    padding: 1rem;
+}
+
+.items-list.active {
+    display: block;
+}

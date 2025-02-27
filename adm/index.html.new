@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The House - Administração do Cardápio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="adm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="../logo/logo.png" alt="The House Logo" id="logo" onerror="this.src='https://via.placeholder.com/200x100/000000/FFD700?text=THE+HOUSE'; this.onerror=null;">
+            </div>
+            <h1>Administração do Cardápio</h1>
+            <p class="tagline">Gerencie os itens do cardápio</p>
+        </header>
+
+        <main>
+            <section class="admin-section">
+                <h2>Gerenciar Categorias</h2>
+                <div class="form-container">
+                    <form id="categoria-form">
+                        <div class="form-group">
+                            <label for="categoria-nome">Nome da Categoria:</label>
+                            <input type="text" id="categoria-nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria-id">ID da Categoria (apenas letras, sem espaços):</label>
+                            <input type="text" id="categoria-id" pattern="[a-zA-Z]+" required>
+                        </div>
+                        <button type="submit" class="btn-add">Adicionar Categoria</button>
+                    </form>
+                </div>
+                
+                <div class="categorias-container">
+                    <h3>Categorias Existentes</h3>
+                    <div id="categorias-list" class="categorias-list">
+                        <!-- Categorias serão adicionadas dinamicamente -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="admin-section">
+                <h2>Adicionar Novo Item</h2>
+                <div class="form-container">
+                    <form id="item-form">
+                        <div class="form-group">
+                            <label for="item-categoria">Categoria:</label>
+                            <select id="item-categoria" required>
+                                <!-- Opções serão adicionadas dinamicamente -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-nome">Nome do Item:</label>
+                            <input type="text" id="item-nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-descricao">Descrição:</label>
+                            <textarea id="item-descricao" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-preco">Preço:</label>
+                            <input type="text" id="item-preco" placeholder="R$ 00,00" required>
+                        </div>
+                        <button type="submit" class="btn-add">Adicionar Item</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="admin-section">
+                <h2>Gerenciar Itens do Cardápio</h2>
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-category="entradas">Entradas</button>
+                        <button class="tab-btn" data-category="pratosPrincipais">Pratos Principais</button>
+                        <button class="tab-btn" data-category="sobremesas">Sobremesas</button>
+                        <button class="tab-btn" data-category="bebidas">Bebidas</button>
+                    </div>
+                    
+                    <div class="items-container">
+                        <div id="entradas-list" class="items-list active"></div>
+                        <div id="pratosPrincipais-list" class="items-list"></div>
+                        <div id="sobremesas-list" class="items-list"></div>
+                        <div id="bebidas-list" class="items-list"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 The House - Painel Administrativo</p>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
+    <script src="adm.js"></script>
+</body>
+</html>
