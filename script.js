@@ -174,22 +174,25 @@ async function loadMenuData() {
         // Carregar itens do menu
         menuData = {};
         
-        // Inicializar arrays vazios para cada categoria
+        // Inicializar arrays para TODAS as categorias
         categoriesData.forEach(category => {
-            menuData[category.id] = [];
+            menuData[category.id] = menuData[category.id] || [];
         });
         
         // Preencher com os itens
         const menuItemsSnapshot = await db.collection('menuItems').get();
         menuItemsSnapshot.forEach(doc => {
             const item = doc.data();
-            if (menuData[item.categoryId]) {
+            if (menuData[item.categoryId] !== undefined) {
                 menuData[item.categoryId].push(item);
             }
         });
 
         // Renderizar o menu após carregar os dados
         renderMenuItems();
+        
+        // Criar navegação rápida
+        createQuickNav();
     } catch (error) {
         console.error("Erro ao carregar dados:", error);
         
@@ -200,22 +203,6 @@ async function loadMenuData() {
         } else {
             menuData = {};
         }
-        
-        const savedCategories = localStorage.getItem('categoriesData');
-        if (savedCategories) {
-            categoriesData = JSON.parse(savedCategories);
-        } else {
-            // Categorias padrão caso não haja dados
-            categoriesData = [
-                { id: 'entradas', nome: 'Entradas' },
-                { id: 'pratosPrincipais', nome: 'Pratos Principais' },
-                { id: 'sobremesas', nome: 'Sobremesas' },
-                { id: 'bebidas', nome: 'Bebidas' }
-            ];
-        }
-        
-        // Renderizar o menu após carregar os dados de fallback
-        renderMenuItems();
     }
 }
 
@@ -392,9 +379,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         // Cria a navegação rápida
         createQuickNav();
-        
-        // Configura a pesquisa
-        setupSearch();
     } catch (error) {
         console.error("Erro ao inicializar a aplicação:", error);
     }

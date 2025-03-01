@@ -295,12 +295,42 @@ input:focus, select:focus, textarea:focus {
     margin-bottom: 1rem;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .menu-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border-color: var(--gold);
+}
+
+.menu-item .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item .item-actions {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.menu-item .description {
+    margin-bottom: 0.5rem;
+}
+
+.menu-item .price {
+    color: var(--gold);
+    font-weight: bold;
+    text-align: right;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .item-header {
@@ -557,4 +587,52 @@ input:focus, select:focus, textarea:focus {
 
 .items-list.active {
     display: block;
+}
+
+/* Estilos para lista de itens no admin */
+.items-list .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.items-list .item-details {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+.items-list .item-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.items-list .item-price {
+    margin-right: 1rem;
+    color: var(--gold);
+}
+
+.items-list .menu-item .price {
+    color: var(--gold);
+    font-weight: bold;
+    text-align: left;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Estilos para a logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.logo-container img {
+    width: 150px; /* Você pode ajustar este valor para aumentar ou diminuir o tamanho */
+    height: auto;
+    transition: transform 0.3s ease;
 }
