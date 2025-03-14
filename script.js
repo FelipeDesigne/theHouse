@@ -291,6 +291,14 @@ function createMenuItem(item) {
     menuItem.className = 'menu-item';
     menuItem.dataset.id = item.id;
 
+    // Adiciona o preço antes do título, apenas se existir
+    if (item.preco && item.preco.trim() !== '') {
+        const price = document.createElement('p');
+        price.className = 'price';
+        price.textContent = item.preco;
+        menuItem.appendChild(price);
+    }
+
     const title = document.createElement('h3');
     title.textContent = item.nome;
     menuItem.appendChild(title);
@@ -301,14 +309,6 @@ function createMenuItem(item) {
         description.className = 'description';
         description.textContent = item.descricao;
         menuItem.appendChild(description);
-    }
-
-    // Adiciona o preço apenas se existir
-    if (item.preco && item.preco.trim() !== '') {
-        const price = document.createElement('p');
-        price.className = 'price';
-        price.textContent = item.preco;
-        menuItem.appendChild(price);
     }
 
     return menuItem;
